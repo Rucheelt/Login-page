@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .container{
+        background-color: lightblue;
+        border-radius: 5px;
+        border: 2px solid grey;
+        box-shadow: lightgray;
+        width:300px;
+        height:200px;
+        padding: 20px;
+        margin:  0 auto;
+        margin-top: 100px;
+     }
+     body{
+        text-align: center;
+     }
+     button{
+        width: 75%;
+        background-color: green;
+     }
+     input{
+        width:75%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     h4{
+        color:deeppink
+     }
+     #logout{
+        display: none;
+     }
+    </style>
+</head>
+<body>
+    <div class="container" id="login" >
+        <h4>Login</h4>
+        <input type="text" id="textbox"placeholder="Enter Username"><br><br> 
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container" id="logout" >
+        <h4>Main page</h4>
+        <p> Welcome <span id="displayName"></span> !!! <br>You have succefully logged in...</p>
+        <button onclick="logout()">logout</button>
+    </div>
+
+    <script>
+        function login(){
+            const name=document.getElementById("textbox").value;
+            if(name) {
+
+// Hide login page, show welcome page
+
+document.getElementById('login').style.display = 'none';
+
+document.getElementById('logout').style.display = 'block';
+
+// Display the name
+
+document.getElementById('displayName').textContent = name;
+
+} else {
+
+alert("Enter your name!!!");
+
+}
+        }
+        
+        function logout(){
+
+            document.getElementById('login').style.display = 'block';
+
+document.getElementById('logout').style.display = 'none';
+
+// Display the name
+
+document.getElementById('displayName').textContent ="";
+        }
+
+
+        
+    </script>
+</body>
+</html>
